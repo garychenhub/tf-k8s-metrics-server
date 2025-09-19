@@ -10,8 +10,10 @@ resource "helm_release" "metrics_server" {
   namespace  = var.namespace
   wait       = var.wait
 
-  set_list {
-    name  = "args"
-    value = var.metrics_server_args
-  }
+  set_list = [
+    {
+      name  = "args"
+      value = var.metrics_server_args
+    }
+  ]
 }
