@@ -9,4 +9,9 @@ resource "helm_release" "metrics_server" {
   version    = var.chart_version
   namespace  = var.namespace
   wait       = var.wait
+
+  set_list {
+    name  = "args"
+    value = var.metrics_server_args
+  }
 }

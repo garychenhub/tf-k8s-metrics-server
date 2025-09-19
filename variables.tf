@@ -27,3 +27,11 @@ variable "wait" {
   default     = false
   description = " Will wait until all resources are in a ready state before marking the release as successful."
 }
+
+variable "metrics_server_args" {
+  type = list(string)
+  default = [
+    "--kubelet-insecure-tls"
+  ]
+  description = "metrics-server args"
+}
